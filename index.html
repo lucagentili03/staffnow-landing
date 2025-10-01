@@ -3,90 +3,136 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StaffNow — B2B Workforce Solutions</title>
-  <meta name="description" content="StaffNow helps enterprises hire faster with on-demand staffing, vetted talent pipelines, and workforce analytics." />
+  <title>StaffNow — Instant Hospitality Staffing</title>
+  <meta name="description" content="StaffNow connects restaurants, bars, and hotels with vetted local freelancers in minutes. Fill last-minute shifts fast and keep service running smoothly." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     :root{
-      --primary:#2563eb;        /* brand blue */
-      --primary-600:#1d4ed8;
-      --text:#0f172a;
-      --muted:#64748b;
+      --primary:#E76F51;        /* terracotta */
+      --primary-600:#cf5f45;
+      --accent:#2A9D8F;         /* teal */
+      --accent-600:#238a7e;
+      --ink:#0B132B;            /* deep navy */
+      --muted:#6b7280;
+      --bg:#FFFBF7;             /* warm off-white */
       --card:#ffffff;
-      --border:#e5e7eb;
-      --bg:#f8fafc;
-      --radius:16px;
-      --shadow:0 10px 30px rgba(2,6,23,.08);
+      --border:#f1e8e3;
+      --radius:18px;
+      --shadow:0 20px 40px rgba(11,19,43,.08);
       --maxw:1200px;
     }
     *{box-sizing:border-box}
     html,body{margin:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    body{
+      font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:var(--ink); line-height:1.6;
+    }
     img{max-width:100%;display:block;height:auto}
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    .btn{
-      display:inline-flex;align-items:center;gap:.6rem;min-height:44px;
-      background:var(--primary);color:#fff;border:1px solid transparent;
-      padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);
-      transition:transform .15s ease, background .2s ease
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9);
+      backdrop-filter:saturate(180%) blur(6px);
+      border-bottom:1px solid var(--border);
     }
-    .btn:hover{background:var(--primary-600);transform:translateY(-1px)}
-    .btn.secondary{background:#fff;color:var(--primary);border-color:var(--border)}
-    .pill{display:inline-block;padding:6px 12px;border-radius:999px;background:#e0e7ff;color:#1e40af;font-weight:700;font-size:12px;border:1px solid #c7d2fe}
-    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border)}
-    .nav{height:64px;display:flex;justify-content:space-between;align-items:center}
-    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800}
+    .nav{height:70px;display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;align-items:center;gap:.7rem;font-weight:800}
     .brand i{color:var(--primary)}
+    nav a{margin-left:18px;font-weight:700}
+    nav a.btn{margin-left:22px}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; gap:.6rem; min-height:46px;
+      background:var(--primary); color:#fff; border:1px solid transparent;
+      padding:12px 18px; border-radius:14px; box-shadow:var(--shadow);
+      transition:transform .15s ease, background .2s ease;
+    }
+    .btn:hover{background:var(--primary-600); transform:translateY(-1px)}
+    .btn.secondary{background:#fff; color:var(--primary); border-color:#ffd9cc}
+    .btn.ghost{background:#F0FBF9; color:var(--accent); border:1px solid #d9f3ef}
+
+    .pill{display:inline-flex;align-items:center;gap:.4rem;padding:6px 10px;border-radius:999px;
+      background:#FFF1ED;color:var(--primary);font-weight:800;font-size:12px;border:1px solid #ffd9cc}
+
     /* Hero */
-    .hero{background:linear-gradient(180deg,#ffffff 0%, #eef2ff 100%);padding:56px 0 28px}
-    .hero-grid{display:grid;gap:28px;align-items:center}
-    .hero h1{margin:0 0 10px;font-size:clamp(28px,4vw,44px);line-height:1.15}
-    .hero p{margin:0 0 20px;color:var(--muted)}
-    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-    .stat{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center}
-    .metric{font-weight:800;font-size:22px}
-    .help{font-size:12px;color:var(--muted)}
+    .hero{
+      position:relative; padding:64px 0 20px;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, #FFEDE6 0%, transparent 60%),
+        radial-gradient(900px 500px at -10% 20%, #E8FFF9 0%, transparent 55%),
+        #fff;
+    }
+    .hero-grid{display:grid; gap:28px; align-items:center}
+    .hero h1{margin:8px 0 10px; font-size:clamp(30px,4.4vw,48px); line-height:1.1; letter-spacing:-.02em}
+    .hero p{margin:0 0 20px; color:var(--muted)}
+    .hero-illus{
+      background:linear-gradient(135deg,#ffffff 0%,#fff6f1 60%);
+      border:1px solid var(--border); border-radius:26px; box-shadow:var(--shadow); padding:16px;
+    }
+    .cta-row{display:flex; flex-wrap:wrap; gap:12px}
+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px}
+    .stat{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:14px; text-align:center}
+    .metric{font-weight:800; font-size:22px}
+    .help{font-size:12px; color:var(--muted)}
+
+    /* Wave separators */
+    .wave{display:block; width:100%; height:60px}
+    .wave svg{display:block; width:100%; height:100%}
+
     /* Sections */
-    .section{padding:56px 0}
-    .section-title{text-align:center;margin-bottom:20px}
-    .section-title h2{margin:0;font-size:clamp(22px,3.2vw,32px)}
-    .section-title p{color:var(--muted);margin-top:8px}
-    .grid{display:grid;gap:16px}
+    .section{padding:60px 0}
+    .section.alt{background:#fff}
+    .section-title{text-align:center; margin-bottom:24px}
+    .section-title h2{margin:0; font-size:clamp(24px,3.2vw,34px)}
+    .section-title p{color:var(--muted); margin-top:8px}
+
+    .grid{display:grid; gap:18px}
     .grid.cols-4{grid-template-columns:1fr}
     .grid.cols-3{grid-template-columns:1fr}
+
     /* Cards */
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:transform .2s ease}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+      padding:20px; box-shadow:var(--shadow); transition:transform .2s ease}
     .card:hover{transform:translateY(-2px)}
-    .icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:#eef2ff;color:var(--primary);margin-bottom:10px}
-    .card h3{margin:8px 0 8px;font-size:18px}
-    .card p{margin:0;color:var(--muted)}
+    .icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
+      background:#E9FBF7;color:var(--accent);margin-bottom:12px;border:1px solid #d9f3ef}
+    .card h3{margin:8px 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--muted)}
+
     /* Cases */
-    .case{display:grid;gap:12px}
-    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#ecfdf5;color:#065f46;font-weight:700;font-size:12px;border:1px solid #d1fae5}
+    .case{display:grid; gap:12px}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#FFF7E6;color:#8a5706;font-weight:800;font-size:12px;border:1px solid #ffe4b5}
+
+    /* Team */
+    .avatar{width:60px;height:60px;border-radius:14px;object-fit:cover;border:2px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+
     /* Contact */
-    .contact{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .contact{background:#fff;border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
     form{display:grid;gap:12px}
     .field{display:grid;gap:6px}
-    label{font-weight:600}
-    input,textarea{border:1px solid #d1d5db;border-radius:12px;padding:12px;background:#fff;min-height:44px}
+    label{font-weight:700}
+    input,textarea{border:1px solid #e6dcd6;border-radius:14px;padding:12px;background:#fff;min-height:44px}
     textarea{min-height:120px;resize:vertical}
+
     /* Footer */
-    footer{background:#0b1220;color:#cbd5e1;padding:24px 0;margin-top:10px}
+    footer{background:#0b132b;color:#cbd5e1;padding:26px 0}
     .footer-grid{display:grid;gap:16px;align-items:center}
-    .social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:#0f172a;border:1px solid #1f2937;margin-right:10px;transition:transform .15s ease, background .2s ease}
-    .social a:hover{background:#111827;transform:translateY(-1px)}
-    .credit{font-size:13px;color:#94a3b8}
+    .social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:#0f1c3a;border:1px solid #1f2e55;margin-right:10px;transition:transform .15s ease, background .2s ease}
+    .social a:hover{background:#142347;transform:translateY(-1px)}
+    .credit{font-size:13px;color:#9fb0c8}
+
     /* Responsive */
-    @media (min-width:640px){
+    @media (min-width:720px){
       .hero-grid{grid-template-columns:1.1fr .9fr}
       .grid.cols-4{grid-template-columns:repeat(4,1fr)}
       .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-      .case{grid-template-columns:180px 1fr;align-items:center}
+      .case{grid-template-columns:220px 1fr;align-items:center}
       .footer-grid{grid-template-columns:1fr auto}
     }
   </style>
@@ -95,11 +141,12 @@
   <!-- Header -->
   <header aria-label="Primary navigation">
     <div class="container nav">
-      <div class="brand"><i class="fa-solid fa-user-group"></i> StaffNow</div>
-      <nav class="hide-mobile">
-        <a href="#services" style="margin-right:16px">Services</a>
-        <a href="#cases" style="margin-right:16px">Client Cases</a>
-        <a href="#contact" class="btn">Contact Sales</a>
+      <div class="brand"><i class="fa-solid fa-bell-concierge"></i> StaffNow</div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#cases">Cases</a>
+        <a href="#team">Team</a>
+        <a href="#contact" class="btn">Get Staff Now</a>
       </nav>
     </div>
   </header>
@@ -108,121 +155,167 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="pill">Enterprise staffing, delivered fast</span>
-        <h1>Hire qualified talent in days, not weeks.</h1>
-        <p>StaffNow builds vetted talent pipelines and on-demand staffing programs for operations at scale—compliant, data-driven, and ready to deploy.</p>
+        <span class="pill"><i class="fa-solid fa-bolt"></i> Last-Minute Shift Fill</span>
+        <h1>Instant Hospitality Staffing for Restaurants, Bars & Hotels.</h1>
+        <p>When someone calls in sick or demand spikes, StaffNow matches you with vetted local freelancers in minutes—so your service never skips a beat.</p>
         <div class="cta-row">
-          <a href="#contact" class="btn" aria-label="Book a call with StaffNow">
-            <i class="fa-solid fa-paper-plane"></i> Book a discovery call
+          <a href="#contact" class="btn" aria-label="Get Staff Now">
+           <i class="fa-solid fa-user-plus"></i> Get Staff Now
           </a>
-          <a href="#services" class="btn secondary" aria-label="Explore services">
-            <i class="fa-solid fa-briefcase"></i> Explore services
+          <a href="#services" class="btn ghost" aria-label="Explore services">
+            <i class="fa-solid fa-utensils"></i> Explore Services
           </a>
         </div>
         <div class="stats" aria-label="Key outcomes">
           <div class="stat">
-            <div class="metric">7d avg</div>
-            <div class="help">Time-to-fill critical roles</div>
+            <div class="metric">15 min</div>
+            <div class="help">Typical match time</div>
           </div>
           <div class="stat">
             <div class="metric">98%</div>
-            <div class="help">Client retention</div>
+            <div class="help">Shift completion rate</div>
           </div>
           <div class="stat">
-            <div class="metric">30%↓</div>
-            <div class="help">Agency spend</div>
+            <div class="metric">40%↓</div>
+            <div class="help">Service disruptions</div>
           </div>
         </div>
       </div>
-      <div>
-        <img src="https://placehold.co/900x650/png" alt="Recruitment dashboard and hiring team collaborating">
+      <div class="hero-illus" aria-hidden="true">
+        <img src="https://placehold.co/880x600/png?text=Hospitality+Dashboard" alt="StaffNow dashboard showing nearby freelancers and open shifts">
       </div>
     </div>
   </section>
 
+  <!-- Wave -->
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#ffffff" d="M0,32 C240,76 480,4 720,24 C960,44 1200,72 1440,32 L1440,120 L0,120 Z"/></svg>
+  </div>
+
   <!-- Services -->
-  <section id="services" class="section">
+  <section id="services" class="section alt">
     <div class="container">
       <div class="section-title">
-        <h2>Solutions built for enterprise hiring</h2>
-        <p>From surge staffing to ongoing pipelines, we cover the full lifecycle.</p>
+        <h2>Hospitality services we fill—fast</h2>
+        <p>Flexible, vetted talent for front-of-house, back-of-house and hotel operations.</p>
       </div>
       <div class="grid cols-4" role="list">
         <article class="card" role="listitem">
-          <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <h3>Talent Acquisition</h3>
-          <p>Curated shortlists from a vetted network across operations, back office, and technical roles.</p>
+          <div class="icon"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+          <h3>Bartenders & Barbacks</h3>
+          <p>Experienced pros for high-volume nights, events and pop-ups. POS-ready, cocktail-savvy.</p>
         </article>
         <article class="card" role="listitem">
-          <div class="icon"><i class="fa-solid fa-bolt"></i></div>
-          <h3>On-Demand Staffing</h3>
-          <p>Elastic staffing for peak seasons and projects, with guaranteed response SLAs.</p>
+          <div class="icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Waitstaff & Runners</h3>
+          <p>Customer-ready staff who can handle rush hours, large parties and outdoor service.</p>
         </article>
         <article class="card" role="listitem">
-          <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
-          <h3>Workforce Analytics</h3>
-          <p>Hiring funnels, time-to-fill, and retention dashboards to optimize every step.</p>
+          <div class="icon"><i class="fa-solid fa-broom"></i></div>
+          <h3>Housekeeping</h3>
+          <p>Hotel housekeeping teams trained for quick turnarounds and quality standards.</p>
         </article>
         <article class="card" role="listitem">
-          <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <h3>Compliance & Payroll</h3>
-          <p>Background checks, right-to-work, and payroll orchestration aligned to local regulations.</p>
+          <div class="icon"><i class="fa-solid fa-concierge-bell"></i></div>
+          <h3>Front Desk & Hosts</h3>
+          <p>Multilingual reception, host/hostess and concierge talent for seamless guest experience.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- Wave -->
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#fff7f0" d="M0,24 C220,64 520,0 760,12 C1020,26 1240,60 1440,28 L1440,120 L0,120 Z"/></svg>
+  </div>
+
   <!-- Client Cases -->
-  <section id="cases" class="section" style="padding-top:10px">
+  <section id="cases" class="section" style="background:#FFF7F0">
     <div class="container">
       <div class="section-title">
-        <h2>Proven outcomes</h2>
-        <p>Results across logistics, retail, and financial operations.</p>
+        <h2>Real venues, real results</h2>
+        <p>Stories from restaurants, hotels and bars using StaffNow to stay fully staffed.</p>
       </div>
 
       <div class="grid cols-3">
         <article class="card case">
-          <img src="https://placehold.co/640x420/png" alt="Logistics warehouse staffing case">
+          <img src="https://placehold.co/680x440/png?text=Restaurant" alt="Busy restaurant dining room">
           <div>
-            <span class="badge">Logistics</span>
-            <h3>Peak season ramp</h3>
-            <p>Deployed flexible teams across 4 distribution centers within 10 days.</p>
-            <p class="metric">↑ 42% throughput</p>
-            <p class="help">OT hours reduced 18% in first month.</p>
+            <span class="badge">Restaurant</span>
+            <h3>Campo Bravo — No more cancelations</h3>
+            <p>Filled last-minute bartender and runner shifts on weekends and holidays.</p>
+            <p class="metric">↓ 40% service gaps</p>
+            <p class="help">Owner reported lower stress and better guest reviews.</p>
           </div>
         </article>
 
         <article class="card case">
-          <img src="https://placehold.co/640x420/png" alt="Retail multi-site hiring case">
+          <img src="https://placehold.co/680x440/png?text=Hotel" alt="Hotel lobby front desk">
           <div>
-            <span class="badge">Retail</span>
-            <h3>Multi-site hiring</h3>
-            <p>Rolled out standardized hiring playbooks for 120 stores.</p>
-            <p class="metric">↓ 28% time-to-hire</p>
-            <p class="help">Candidate no-show rate cut by half.</p>
+            <span class="badge">Hotel</span>
+            <h3>Hotel Azul — Front desk in 15′</h3>
+            <p>Matched multilingual receptionists during a conference spike.</p>
+            <p class="metric">15 min avg match</p>
+            <p class="help">Check-in queues reduced significantly.</p>
           </div>
         </article>
 
         <article class="card case">
-          <img src="https://placehold.co/640x420/png" alt="Finance back-office staffing case">
+          <img src="https://placehold.co/680x440/png?text=Bar" alt="Cocktail bar counter">
           <div>
-            <span class="badge">Financial Services</span>
-            <h3>Back-office modernization</h3>
-            <p>Built a nearshore team for KYC and reconciliations.</p>
-            <p class="metric">↑ 2.3x case throughput</p>
-            <p class="help">Quality audits > 99% pass rate.</p>
+            <span class="badge">Bar</span>
+            <h3>Bar Central — Weekend reliability</h3>
+            <p>Guaranteed bartender coverage for peak nights with vetted freelancers.</p>
+            <p class="metric">↑ CSAT on weekends</p>
+            <p class="help">No service gaps during events.</p>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="section alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>The team behind StaffNow</h2>
+        <p>We’re an international group focused on solving hospitality’s most urgent staffing pain.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card" style="display:flex;gap:14px;align-items:center">
+          <img class="avatar" src="https://placehold.co/120x120" alt="Toon Brautigam">
+          <div><h3>Toon Brautigam</h3><p class="help">Project Manager</p></div>
+        </article>
+        <article class="card" style="display:flex;gap:14px;align-items:center">
+          <img class="avatar" src="https://placehold.co/120x120" alt="Jonas">
+          <div><h3>Jonas</h3><p class="help">Team Lead</p></div>
+        </article>
+        <article class="card" style="display:flex;gap:14px;align-items:center">
+          <img class="avatar" src="https://placehold.co/120x120" alt="Miguel Loffner">
+          <div><h3>Miguel Loffner</h3><p class="help">Customer Research</p></div>
+        </article>
+        <article class="card" style="display:flex;gap:14px;align-items:center">
+          <img class="avatar" src="https://placehold.co/120x120" alt="Delfina Orellano">
+          <div><h3>Delfina Orellano</h3><p class="help">Service Designer</p></div>
+        </article>
+        <article class="card" style="display:flex;gap:14px;align-items:center">
+          <img class="avatar" src="https://placehold.co/120x120" alt="Ignacio Casini">
+          <div><h3>Ignacio Casini</h3><p class="help">Marketing</p></div>
+        </article>
+        <article class="card" style="display:flex;gap:14px;align-items:center">
+          <img class="avatar" src="https://placehold.co/120x120" alt="Luca Gentili & Floris Bakker">
+          <div><h3>Luca Gentili & Floris Bakker</h3><p class="help">Business Model Leads</p></div>
         </article>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section">
+  <section id="contact" class="section" style="background:#ffffff">
     <div class="container">
       <div class="section-title">
-        <h2>Contact sales</h2>
-        <p>Tell us your staffing goals—reply within one business day.</p>
+        <h2>Get staffed today</h2>
+        <p>Tell us the role, time and location. We’ll reply within one business day.</p>
       </div>
       <div class="contact" role="form" aria-labelledby="contact-form">
         <form action="https://formspree.io/f/mpwyrqrv" method="POST">
@@ -233,20 +326,20 @@
             </div>
             <div class="field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" inputmode="email" placeholder="jane@company.com" required aria-required="true" />
+              <input id="email" name="email" type="email" inputmode="email" placeholder="jane@venue.com" required aria-required="true" />
             </div>
             <div class="field">
-              <label for="company">Company</label>
-              <input id="company" name="company" type="text" placeholder="Acme Inc." />
+              <label for="company">Venue</label>
+              <input id="company" name="company" type="text" placeholder="Campo Bravo Restaurant" />
             </div>
             <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="What roles do you need to fill, and where?" required aria-required="true"></textarea>
+              <label for="message">What do you need?</label>
+              <textarea id="message" name="message" placeholder="e.g., 2 bartenders this Saturday 18:00–01:00 in Palermo." required aria-required="true"></textarea>
             </div>
           </div>
-          <input type="hidden" name="_subject" value="New lead — StaffNow landing page" />
+          <input type="hidden" name="_subject" value="New lead — StaffNow Hospitality" />
           <button class="btn" type="submit" aria-label="Send message">
-            <i class="fa-regular fa-paper-plane"></i> Send message
+            <i class="fa-regular fa-paper-plane"></i> Send Request
           </button>
           <p class="help">We respect your privacy. No spam, ever.</p>
         </form>
@@ -259,7 +352,7 @@
     <div class="container footer-grid">
       <div>
         <strong>StaffNow</strong><br />
-        <span class="credit">© <span id="year"></span> StaffNow, Inc. All rights reserved.</span>
+        <span class="credit">© <span id="year"></span> StaffNow. All rights reserved.</span>
       </div>
       <div class="social" aria-label="Social links">
         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
